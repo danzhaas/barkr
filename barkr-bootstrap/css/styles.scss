@@ -1,0 +1,172 @@
+$color-primary: #3046C5;
+$color-secondary: #5637dd;
+$color-pale: #CEC8FF;
+$color-mid: #901CAD;
+$color-dark: #60106b;
+$color-transparent-black: rgba(0, 0, 0, 0.5);
+
+$body-font: 'Josefin Sans', sans-serif;   
+$header-font: 'Fredoka One', cursive;
+
+html {
+    height:100vh;
+}
+
+body {
+    height:100vh;
+    color:black; 
+    font-family: $body-font;
+    text-align: center;
+}
+
+main {
+    max-width:1000px;
+}
+
+div {
+    margin:0;
+    padding:0;
+}
+
+.container {
+    max-width:1000px;
+}
+
+#index-container {
+    border: 10px solid #343A40;
+}
+
+#index-logo {
+    border: 5px solid #343A40;
+    background-color:rgba(255,193,7, 0.7);
+}
+
+.btn, .row,  {
+    margin:0;
+    padding:0;
+}
+
+.col, .col-12, .col-6, .col-5, .col-md-6 {
+    margin:0;
+    padding:5px;
+}
+
+.card {
+    margin:10px 0;
+}
+
+h1{
+    font-family: $header-font;
+    font-size: 10vh;
+    margin:0;
+}
+
+.minih1 {
+    font-size:8vh;
+}
+
+h2,h3,h4,h5 {
+    font-family: $body-font;
+    margin:0px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    padding:4px;
+}
+
+
+.site-footer {
+    background-image: linear-gradient($color-pale, white);
+    padding: 20px 0;
+}
+
+.btn {
+    white-space:normal;
+}
+
+textarea {
+    overflow:scroll;
+}
+
+
+#paw {
+    font-size: 3rem;
+}
+
+#dog-home-img {
+    overflow: hidden;
+    position: absolute;
+}
+
+.list-group-item {
+    padding:4px;
+}
+
+#qr-code {
+    font-size: 3rem;
+}
+
+#navbarDropdown {
+    right:0;
+}
+
+nav {
+    height: 0;
+    z-index: 10;
+    font-size: 1.5rem;
+}
+
+#dog-name {    
+    background-color:rgba(255,255,255,0.6);
+    max-height:25%;
+}
+
+#adventure-main {
+    height:62.5%;
+}
+
+#adventure-btns {
+    height:12.5%;
+}
+
+#adventure-search {
+background-color: white;
+display:none;
+}
+
+.overflow-scroll {
+    overflow:scroll;
+}
+
+.overflow-hidden {
+    overflow:hidden;
+}
+
+.card-body {
+    padding:8px;
+}
+
+.card-title {
+    margin-bottom:4px;
+}
+
+.h-12point5 {
+    height:12.5%;
+}
+
+.h-37point5 {
+    height:37.5%;
+}
+
+.h-62point5 {
+    height:62.5%;
+}
+
+.h-87point5 {
+    height:87.5%;
+}
+
+video {
+    
+}
