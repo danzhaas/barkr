@@ -82,7 +82,7 @@ class DogHome extends Component {
 
                     <div className="row h-25">
                         <div className="col-12 bg-white">
-                            <p>Hi there, I'm Suede! I am a 4 1/2 year old girl.  I love treats, am friendly with people, and know a lot of tricks.   I like going to the dog park, but outside the park I need space from other dogs.</p>
+                            <p>Hi there, I'm Suede! I am a 4 1/2 year old girl.  I love meeting people, eating treats, and going to the dog park.  Outside the park I need space from other dogs.  I know a lot of tricks, so go to the Talk to Me page to see all the commands I know. Then let's talk!</p>
                         </div>
                     </div>
                     <div className="row h-12-5">

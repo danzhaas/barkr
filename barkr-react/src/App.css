@@ -78,3 +78,32 @@ button {
 #height-auto {
   height:auto;
 }
+
+#navbar-toggler {
+  width:100px;
+}
+
+#navbar {
+  width:200px;
+  top:112px;
+  right:14px;
+  border:2px solid #DC3545;
+}
+
+.nav-link {
+  color: #DC3545;
+}
+
+.nav-icon {
+  width:32px;
+  padding:auto;
+  margin:0 3px;
+}
+
+i {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.header-button {
+  border:2px solid #DC3545;
+}
