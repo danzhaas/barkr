@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 import { Button, Nav, Navbar, NavbarToggler, Collapse, NavItem} from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
-function Header() {
+function Header(props) {
 
     const NavComponent = (props) => {
 
@@ -41,17 +41,26 @@ function Header() {
     }
 
     return (
-        <div className="d-flex flex-row justify-content-around align-content-center bg-warning">
-            <NavLink id="header-dogs" className="nav-link align-items-center" to="/landing">
-                <i className="fa fa-dog text-danger"></i>
-                <i className="fa fa-dog text-danger"></i>
-            </NavLink>
-            <NavLink className="nav-link d-flex flex-row" to="/landing">
-                <i id="paw" className="fa fa-paw fa-5x text-danger"></i>
-                <h1 id="logo-text" className="text-danger">Barkr</h1>
-                <i className="fa fa-dog text-danger"></i>
-            </NavLink>
-            <NavComponent />
+        <div className="container sticky-top bg-warning" id="height-auto">
+            <div classname="row" id="height-auto">
+                <div className="col-12 d-flex flex-row justify-content-around align-content-center" id="height-auto">
+                    <NavLink id="header-dogs" className="nav-link align-items-center" to="/landing">
+                        <i className="fa fa-dog text-danger"></i>
+                        <i className="fa fa-dog text-danger"></i>
+                    </NavLink>
+                    <NavLink className="nav-link d-flex flex-row" to="/landing">
+                        <i id="paw" className="fa fa-paw fa-5x text-danger"></i>
+                        <h1 id="logo-text" className="text-danger">Barkr</h1>
+                        <i className="fa fa-dog text-danger"></i>
+                    </NavLink>
+                    <NavComponent />
+                </div>
+            </div>
+            <div classname="row">
+                <div className="col-12">
+                    <h1>{props.pageName}</h1>
+                </div>
+            </div>
         </div>
     )
 }

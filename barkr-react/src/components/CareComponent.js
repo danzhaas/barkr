@@ -74,41 +74,34 @@ class Care extends Component {
     render() {
 
         return (
-            <div className="container">
-                <div classname="row">
-                    <div className="col-12">
-                        <Header />
-                    </div>
-                </div>
-                <div classname="row">
-                    <div className="col-12">
-                        <h1>Take Care of Me</h1>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-12 col-md-6">
-                        <h2>Daily Routine</h2>
-                        <ul>
-                            <li class="list-group-item">8:00 AM Quick Walk</li>
-                            <li class="list-group-item">8:15 AM Breakfast: 2 scoops kibble + fiber</li>
-                            <li class="list-group-item">5:00 PM Long Walk</li>
-                            <li class="list-group-item">6:00 PM Dinner: 1 scoop kibble + Fiber</li>
-                            <li class="list-group-item">8:00 PM Quick Walk</li>
-                            <li class="list-group-item">8:15 PM Play Time</li>
-                            <li class="list-group-item">8:45 PM Training</li>
-                            <li class="list-group-item">9:00 PM Bedtime</li>
-                        </ul>
-                    </div>
-                    <div className="col-12 col-md-6">
-                        <div className="row">
-                            <Journal />
+            <>
+                <Header pageName="Take Care of Me" />
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12 col-md-6">
+                            <h2>Daily Routine</h2>
+                            <ul>
+                                <li class="list-group-item">8:00 AM Quick Walk</li>
+                                <li class="list-group-item">8:15 AM Breakfast: 2 scoops kibble + fiber</li>
+                                <li class="list-group-item">5:00 PM Long Walk</li>
+                                <li class="list-group-item">6:00 PM Dinner: 1 scoop kibble + Fiber</li>
+                                <li class="list-group-item">8:00 PM Quick Walk</li>
+                                <li class="list-group-item">8:15 PM Play Time</li>
+                                <li class="list-group-item">8:45 PM Training</li>
+                                <li class="list-group-item">9:00 PM Bedtime</li>
+                            </ul>
                         </div>
-                        <div className="row">
-                            <EmergencyContact />
-                        </div>                    
+                        <div className="col-12 col-md-6">
+                            <div className="row">
+                                <Journal />
+                            </div>
+                            <div className="row">
+                                <EmergencyContact />
+                            </div>                    
+                        </div>
                     </div>
                 </div>
-            </div>
+            </>
         )
     }
 }

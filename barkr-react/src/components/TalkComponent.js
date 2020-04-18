@@ -28,33 +28,26 @@ class Talk extends Component {
     render() {
 
         return (
-            <div className="container">
-                <div classname="row sticky-top">
-                    <div className="col-12">
-                        <Header />
+            <>
+                <Header pageName="Talk to Me" />
+                <div className="container overflow-scroll">                    
+                    <div className="row">
+                        <div class="col-12 d-flex flex-wrap justify-content-around">
+                            <CommandCard command={this.state.commands[0]}/>
+                            <CommandCard command={this.state.commands[1]}/>
+                            <CommandCard command={this.state.commands[2]}/>
+                            <CommandCard command={this.state.commands[3]}/>
+                            <CommandCard command={this.state.commands[4]}/>
+                            <CommandCard command={this.state.commands[5]}/>
+                            <CommandCard command={this.state.commands[6]}/>
+                            <CommandCard command={this.state.commands[7]}/>
+                            <CommandCard command={this.state.commands[8]}/>
+                            <CommandCard command={this.state.commands[9]}/>
+                            <CommandCard command={this.state.commands[10]}/>
+                        </div>
                     </div>
                 </div>
-                <div classname="row">
-                    <div className="col-12">
-                        <h1>Talk to Me</h1>
-                    </div>
-                </div>
-                <div className="row" id="talk-row">
-                    <div class="col-12 d-flex flex-wrap justify-content-around">
-                        <CommandCard command={this.state.commands[0]}/>
-                        <CommandCard command={this.state.commands[1]}/>
-                        <CommandCard command={this.state.commands[2]}/>
-                        <CommandCard command={this.state.commands[3]}/>
-                        <CommandCard command={this.state.commands[4]}/>
-                        <CommandCard command={this.state.commands[5]}/>
-                        <CommandCard command={this.state.commands[6]}/>
-                        <CommandCard command={this.state.commands[7]}/>
-                        <CommandCard command={this.state.commands[8]}/>
-                        <CommandCard command={this.state.commands[9]}/>
-                        <CommandCard command={this.state.commands[10]}/>
-                    </div>
-                </div>
-            </div>
+            </>
         )
     }
 }

@@ -26,30 +26,23 @@ class Adventure extends Component {
     render() {
     
         return(
-            <div className="container">
-                <div classname="row">
-                    <div className="col-12">
-                        <Header />
+            <>
+                <Header pageName="Adventure with Me" />
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12" id="adventure-main">
+                            <AdventureSearch />
+                            <AdventureMap />
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-12" id="adventure-buttons">
+                            <Link>
+                            </Link>
+                        </div>
                     </div>
                 </div>
-                <div classname="row">
-                    <div className="col-12">
-                        <h1>Adventure With Me</h1>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-12" id="adventure-main">
-                        <AdventureSearch />
-                        <AdventureMap />
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-12" id="adventure-buttons">
-                        <Link>
-                        </Link>
-                    </div>
-                </div>
-            </div>
+            </>
         )
     }
 }
