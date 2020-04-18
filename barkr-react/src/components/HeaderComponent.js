@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
-import {Button, Nav, NavbarToggler, Collapse, NavItem, Jumbotron, Navbar, NavbarBrand} from 'reactstrap';
+import React, { Component, useState } from 'react';
+import { Button, Nav, Navbar, NavbarToggler, Collapse, NavItem} from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
 function Header() {
-    
-    function NavComponent() {
-        
-        return(
-            <>
-                <NavbarToggler />
-                <Collapse className="position-absolute text-right p-1 bg-dark" id="navbarDropdown" aria-labelledby="navbarDropdown">
+
+    const NavComponent = (props) => {
+
+        const [collapsed, setCollapsed] = useState(true);        
+        const toggleNavbar = () => setCollapsed(!collapsed);
+
+        return (
+            <Navbar>
+                <NavbarToggler onClick={toggleNavbar} />
+                <Collapse isOpen={!collapsed} className="position-absolute text-right p-1 bg-dark" navbar>
                     <Nav navbar>
                         <NavItem>
                             <NavLink className="nav-link" to="/dog-home">
@@ -33,24 +36,23 @@ function Header() {
                         </NavItem>
                     </Nav>
                 </Collapse>
-            </>
+            </Navbar>
         )
     }
 
-    return(
-        <>
-            <NavLink className="nav-link" to="/landing">
-                <i className="fa fa-dog fa-4x text-danger"></i>
-                <i className="fa fa-dog fa-4x text-danger"></i>
-            </NavLink> 
-            <Jumbotron>
-                <NavLink className="nav-link" to="/landing">
-                    <i id="paw" className="fa fa-paw fa-5x text-danger"></i>
-                    <h1 className="minih1 text-danger">Barkr</h1>  
-                </NavLink>    
-            </Jumbotron>        
+    return (
+        <div className="d-flex flex-row justify-content-around align-content-center bg-warning">
+            <NavLink id="header-dogs" className="nav-link align-items-center" to="/landing">
+                <i className="fa fa-dog text-danger"></i>
+                <i className="fa fa-dog text-danger"></i>
+            </NavLink>
+            <NavLink className="nav-link d-flex flex-row" to="/landing">
+                <i id="paw" className="fa fa-paw fa-5x text-danger"></i>
+                <h1 id="logo-text" className="text-danger">Barkr</h1>
+                <i className="fa fa-dog text-danger"></i>
+            </NavLink>
             <NavComponent />
-        </>   
+        </div>
     )
 }
 

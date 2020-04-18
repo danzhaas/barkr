@@ -66,26 +66,30 @@ class DogHome extends Component {
     render() {
 
         return(
-            <div className="container">
-                <div classname="row">
-                    <div className="col-12">
+            <div className="container h-100">
+                <div className="row h-12-5">
+                    <div className="col-12 bg-warning">
                         <Header />
                     </div>
                 </div>
-                <div classname="row">
+
+                <div className="row h-50">
                     <div className="col-12">
-                        <div id="dog-card">
-                            <img id="dog-pic" src=""></img>
-                            <h1 id="dog-name">Suede</h1>
+                        <div className="d-flex flex-column position-relative overflow-hidden" id="dog-card">
+                            <img id="dog-home-img" className="img-fluid d-sm-none" src="assets/img/suede-on-bed.jpg"></img>
+                            <img id="dog-home-img" className="img-fluid d-none d-sm-block d-md-none" src="assets/img/suede-on-bed-800x800.jpg"></img>
+                            <img id="dog-home-img" className="img-fluid d-none d-md-block" src="assets/img/suede-on-bed-1000x800.jpg"></img>
+                            <h1 id="dog-name" className="position-absolute text-danger w-100">Suede</h1>
                         </div>
                     </div>
                 </div>
-                <div classname="row">
-                    <div className="col-12">
-                        <p>Hi, I'm Suede! I am a 4 1/2 year old girl.  I love treats, am friendly with people, and know a lot of tricks.   I like going to the dog park, but please keep in mind I generally like my space from other dogs, so keep an eye on me if you see another dog.</p>
+
+                <div className="row h-25">
+                    <div className="col-12 bg-white">
+                        <p>Hi there, I'm Suede! I am a 4 1/2 year old girl.  I love treats, am friendly with people, and know a lot of tricks.   I like going to the dog park, but outside the park I need space from other dogs.</p>
                     </div>
                 </div>
-                <div classname="row">
+                <div className="row h-12-5">
                     <div className="col-6">
                         <div id="social-media">
                             <Link to="instagram.com">
@@ -104,7 +108,9 @@ class DogHome extends Component {
                     </div>
                     <div className="col-6">
                         <Link to="/care">
-                            <Button>Emergency</Button>
+                            <Button className="bg-danger">
+                                Emergency
+                            </Button>
                         </Link>
                     </div>
                 </div>

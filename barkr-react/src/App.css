@@ -1,11 +1,12 @@
 .container {
   height:100vh;
   max-width:1000px;
-  background-color:#343840;
+  border:10px solid #FFC107;
+  box-sizing: border-box;
 }
 
 body {
-  background-color:#343840;
+  background-color:#FFC107;
   font-family: "Josefin Sans", sans-serif;
   text-align: center;
 }
@@ -25,7 +26,21 @@ button {
   padding:0;
 }
 
-#landing-backsplash {
+.row, .column {
+ height:100%;
+}
+
+.row {
+  border: 5px solid #343840;
+  background-color:#343840;
+}
+
+.jumbotron {
+  background-color:#FFC107;
+  margin:0;
+}
+
+#landing-backsplash, #dog-home-img {
   object-fit:cover;
   background-origin: border-box;
   height:100%;
@@ -38,4 +53,28 @@ button {
 #landing-logo * {
   text-shadow: 5px 5px #343840;
   font-size: 10vh;
+}
+
+#logo-text {
+  font-size: 5rem;
+}
+
+#dog-name {
+  bottom:0;
+  margin:0;
+  background-color:rgba(255,255,255,0.5);
+  font-size: 10vh;
+}
+
+.h-12-5 {
+  height:12.5vh;
+}
+
+#header-dogs {
+  height:100px;
+  width:100px;
+}
+
+#talk-row {
+  height:auto;
 }
