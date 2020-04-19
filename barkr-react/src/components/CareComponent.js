@@ -75,7 +75,7 @@ class Care extends Component {
 
         return (
             <>
-                <Header pageName="Take Care of Me" />
+                <Header pageName="Take Care of" dogName="Suede" />
                 <div className="container">
                     <div className="row">
                         <div className="col-12 col-md-6">

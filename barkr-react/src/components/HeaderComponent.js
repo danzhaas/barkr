@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Nav, Navbar, NavbarToggler, Collapse, NavItem} from 'reactstrap';
+import { Button, Nav, Navbar, Collapse, NavItem} from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
 function Header(props) {
@@ -47,25 +47,26 @@ function Header(props) {
     }
 
     return (
-        <div className="container sticky-top bg-warning h-auto">
-            <div className="row border-0 bg-warning" id="height-auto">
-                <div className="col-12 d-flex flex-row justify-content-between align-content-center" id="height-auto">
+        <div className="container sticky-top bg-warning">
+            <div className="row border-0 bg-warning h-auto">
+                <div className="col-12 d-flex flex-row justify-content-between align-content-center h-auto">
                     <NavLink className="nav-link" to="/landing">
                         <Button className="d-flex flex-row align-items-center w-auto bg-warning header-button">
                             <i className="fa fa-dog fa-2x text-danger"></i>
                             <i className="fa fa-dog fa-2x text-danger"></i>
                         </Button>
                     </NavLink>
-                    <NavLink className="nav-link d-flex flex-row" to="/landing">
-                        <i id="paw" className="fa fa-paw fa-5x text-danger"></i>
-                        <h1 id="logo-text" className="text-danger">Barkr</h1>
+                    <NavLink className="nav-link d-flex flex-row align-items-center" to="/landing">
+                        <i id="paw" className="fa fa-paw fa-3x text-danger"></i>
+                        <h1 className="display-4 text-danger">Barkr</h1>
                     </NavLink>
                     <NavComponent />
                 </div>
             </div>
             <div className="row border-0 bg-warning">
-                <div className="col-12">
-                    <h1>{props.pageName}</h1>
+                <div className="col-12 d-flex flex-row justify-content-center">
+                    <h1 className="display-3">{props.pageName}&nbsp;</h1>                    
+                    <h1 className="display-3 text-primary">{props.dogName}</h1>
                 </div>
             </div>
         </div>

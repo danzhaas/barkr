@@ -29,9 +29,9 @@ class Talk extends Component {
 
         return (
             <>
-                <Header pageName="Talk to Me" />
-                <div className="container overflow-scroll">                    
-                    <div className="row">
+                <Header pageName="Talk to" dogName="Suede" />
+                <div className="container">                    
+                    <div className="row h-auto">
                         <div class="col-12 d-flex flex-wrap justify-content-around">
                             <CommandCard command={this.state.commands[0]}/>
                             <CommandCard command={this.state.commands[1]}/>

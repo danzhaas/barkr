@@ -1,50 +1,76 @@
-import React, {Component} from 'react';
+import React, { useState, Component } from 'react';
 import Header from './HeaderComponent';
-import { Link } from 'react-router-dom';
+import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap'
 
 function AdventureSearch() {
 
     return (
-        <div className="overflow-scroll">
-            <script async src="https://cse.google.com/cse.js?cx=011008517122385517076:oeslk2omfyr"></script>	
-            <div class="gcse-search"></div>	
+        <div id="searchDiv" className="overflow-scroll mh-100">
+            <div class="gcse-search" ></div>
         </div>
     )
 }
 
 function AdventureMap() {
-    return(
-        <div className="embed-responsive embed-responsive-1by1">
-            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1J75h137lZpMDdLeovFbWOkHCl_YZDRlg"	allowfullscreen></iframe>	
+    return (
+        <div id="mapDiv" className="embed-responsive embed-responsive-1by1">
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1J75h137lZpMDdLeovFbWOkHCl_YZDRlg" ></iframe>
         </div>
     )
 }
 
+function googleCseSearch() {
+    document.getElementById("gsc-i-id1").value="dog events baltimore";
+    document.querySelector(".gsc-search-button-v2").click();
+}
 
-class Adventure extends Component {
+const Adventure = (props) => {
 
-    render() {
-    
-        return(
-            <>
-                <Header pageName="Adventure with Me" />
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12" id="adventure-main">
-                            <AdventureSearch />
-                            <AdventureMap />
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-12" id="adventure-buttons">
-                            <Link>
-                            </Link>
-                        </div>
+    const [activeTab, setActiveTab] = useState('1');
+
+    const toggle = tab => {
+        if(activeTab !== tab) setActiveTab(tab);
+    }
+
+    return (
+        <>
+            <Header pageName="Adventure with" dogName="Suede" />
+            <div className="container">
+                <div className="row">
+                    <div className="col-12 mh-100 p-0" id="adventure-main">
+                        <Nav tabs>
+                            <NavItem>
+                                <NavLink
+                                    id="adventure-tab"
+                                    className={{ active: activeTab === '1' }}
+                                    onClick={() => { toggle('1'); }}
+                                >
+                                    <h3>Dog Parks</h3>
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink
+                                    id="adventure-tab"
+                                    className={{ active: activeTab === '2' }}
+                                    onClick={() => { toggle('2'); googleCseSearch() }}
+                                >
+                                    <h3>Nearby Events</h3>
+                                </NavLink>
+                            </NavItem>
+                        </Nav>
+                        <TabContent activeTab={activeTab}>
+                            <TabPane tabId="1">
+                                <AdventureMap />
+                            </TabPane>
+                            <TabPane tabId="2">
+                                <AdventureSearch />
+                            </TabPane>
+                        </TabContent>
                     </div>
                 </div>
-            </>
-        )
-    }
+            </div>
+        </>
+    )
 }
 
 export default Adventure;

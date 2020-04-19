@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom';
 function Landing() {
     
     return(
-        <div className="container border-0">
-            <div className="row h-25 border-0">
+        <div className="container h100vh border-0">
+            <div className="row h12vh border-0">
                 <div className="col-12">
                     <Link to="/dog-home">
                         <Button className="btn-warning text-dark"><h2>Meet That Dog</h2></Button>
@@ -14,7 +14,7 @@ function Landing() {
                 </div>
             </div>
 
-            <div className="row h-50">
+            <div className="row h-75">
                 <div className="col-12 h-100 py-3">
                     <div className="h-100 w-100 d-flex flex-column position-relative overflow-hidden">
                         <img id="landing-backsplash" className="img-fluid d-sm-none" src="assets/img/suede-on-bed-faded.jpg"></img>
@@ -28,7 +28,7 @@ function Landing() {
                 </div>
             </div>
 
-            <div className="row h-25">
+            <div className="row h12vh">
                 <div className="col-12">
                     <Link to="/dog-home">
                         <Button className="btn-warning text-dark"><h2>My Dog's Page</h2></Button>
