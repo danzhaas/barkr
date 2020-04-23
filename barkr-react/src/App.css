@@ -128,17 +128,17 @@ i {
   height:70vh;
 }
 
-#adventure-tab {
+#barkr-tab {
   background-color:white;
   color:gray;
   margin-right: 3px;
 }
 
-#adventure-tab.active {
+#barkr-tab.active {
   color:black;
 }
 
-#adventure-tab h3 {
+#barkr-tab h3 {
   margin:0;
 }
 

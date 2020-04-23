@@ -1,4 +1,4 @@
-import React, { useState, Component } from 'react';
+import React, { useState } from 'react';
 import Header from './HeaderComponent';
 import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap'
 
@@ -19,29 +19,32 @@ function AdventureMap() {
     )
 }
 
-function googleCseSearch() {
-    document.getElementById("gsc-i-id1").value="dog events baltimore";
-    document.querySelector(".gsc-search-button-v2").click();
-}
+
 
 const Adventure = (props) => {
 
-    const [activeTab, setActiveTab] = useState('1');
+    const chosenDog=props.chosenDog;
 
+    const [activeTab, setActiveTab] = useState('1');
     const toggle = tab => {
         if(activeTab !== tab) setActiveTab(tab);
     }
 
+    function googleCseSearch() {
+        document.getElementById("gsc-i-id1").value=("dog events "+chosenDog.ZIP);
+        document.querySelector(".gsc-search-button-v2").click();
+    }
+
     return (
         <>
-            <Header pageName="Adventure with" dogName="Suede" />
+            <Header pageName="Adventure with" dogName={chosenDog.name} />
             <div className="container">
                 <div className="row">
                     <div className="col-12 mh-100 p-0" id="adventure-main">
                         <Nav tabs>
                             <NavItem>
                                 <NavLink
-                                    id="adventure-tab"
+                                    id="barkr-tab"
                                     className={{ active: activeTab === '1' }}
                                     onClick={() => { toggle('1'); }}
                                 >
@@ -50,7 +53,7 @@ const Adventure = (props) => {
                             </NavItem>
                             <NavItem>
                                 <NavLink
-                                    id="adventure-tab"
+                                    id="barkr-tab"
                                     className={{ active: activeTab === '2' }}
                                     onClick={() => { toggle('2'); googleCseSearch() }}
                                 >

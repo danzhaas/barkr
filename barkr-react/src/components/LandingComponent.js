@@ -1,15 +1,18 @@
 import React from 'react';
-import {Button, Jumbotron} from 'reactstrap';
+import {Button} from 'reactstrap';
 import {Link} from 'react-router-dom';
 
-function Landing() {
-    
+function Landing(props) {
+
+    const chosenDog=props.chosenDog;
+
     return(
         <div className="container h100vh border-0">
+            
             <div className="row h12vh border-0">
                 <div className="col-12">
                     <Link to="/dog-home">
-                        <Button className="btn-warning text-dark"><h2>Meet That Dog</h2></Button>
+                        <Button className="btn-warning text-dark"><h2>Meet {chosenDog.name} </h2></Button>
                     </Link>                    
                 </div>
             </div>
@@ -31,10 +34,11 @@ function Landing() {
             <div className="row h12vh">
                 <div className="col-12">
                     <Link to="/dog-home">
-                        <Button className="btn-warning text-dark"><h2>My Dog's Page</h2></Button>
+                        <Button className="btn-warning text-dark" ><h2>My Dog's Page</h2></Button>
                     </Link>
                 </div>
             </div>
+
         </div>
     )
 }

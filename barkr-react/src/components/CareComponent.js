@@ -1,67 +1,158 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { Card, CardText, CardBody, CardTitle, CardSubtitle, ListGroup, ListGroupItem, Form, FormGroup, Label, Input, Button, TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap'
 import Header from './HeaderComponent';
 
-function Journal() {
+function DailyCare(props) {
+
+    const chosenDog=props.chosenDog;
+
+    const routineMap = chosenDog.routine.map(item => {
+        return(
+            <div key={item.id}>
+                <ListGroupItem>{item.detail}</ListGroupItem>
+            </div>
+        )
+    })
+
+    const supplyMap = chosenDog.supplies.map(item => {
+        return(
+            <div key={item.id}>
+                <ListGroupItem>{item.detail}</ListGroupItem>
+            </div>
+        )
+    })
+
+    return (
+        <Card>
+            <CardBody>
+                <CardTitle><h2>Daily Care</h2></CardTitle>
+                <CardSubtitle><h4>Routine</h4></CardSubtitle>
+                <ListGroup>
+                    {routineMap}                                
+                </ListGroup>
+                <br/>
+                <CardSubtitle><h4>Supplies</h4></CardSubtitle>                
+                <ListGroup>
+                    {supplyMap}
+                </ListGroup>
+            </CardBody>
+        </Card>
+    )
+}
+
+function Journal(props) {
+    const chosenDog=props.chosenDog;
+
+    const journalNotes = chosenDog.notes.map(entry => {
+        return (
+            <div key={entry.id}>
+                <ListGroupItem>{entry.content}</ListGroupItem>
+            </div>
+            )
+        })
+
+    return (
+        <Card>
+            <CardBody>
+                <CardTitle><h2>Journal</h2></CardTitle>
+                <CardSubtitle>
+                    <h4>Notes</h4>                    
+                </CardSubtitle>
+                <ListGroup>                    
+                    <>
+                        {journalNotes}
+                    </>
+                </ListGroup>
+                <Form>
+                    <FormGroup>
+                        <Label>Add Note</Label>
+                        <Input type="textarea" name="notes" id="notes"></Input>
+                    </FormGroup>
+                    <Button>Save Note</Button>
+                </Form>
+            </CardBody>
+        </Card>
+    )
+}
+
+const EmergencyContact = (props) => {
+    const chosenDog=props.chosenDog;
+
+    const [activeTab, setActiveTab] = useState('1');
+    const toggle = tab => {
+      if(activeTab !== tab) setActiveTab(tab);
+    }
+
+    const mapTabs = chosenDog.contacts.map(entry => {
+        const tabNo=(entry.id+1).toString();
+        return(
+            <div key={entry.id} id={entry.id}>
+                <NavItem>
+                    <NavLink
+                    id="barkr-tab"
+                    className={{ active: activeTab === tabNo, "bg-danger text-white":entry.emergencyVet}}
+                    onClick={() => { toggle(tabNo) }} 
+                    >
+                    {entry.tabName}
+                    </NavLink>
+                </NavItem>
+            </div>
+        )
+    })
+
+    const mapTabPanes = chosenDog.contacts.map(entry => {
+        const tabNo=(entry.id+1).toString();
+        return(
+            <div key={entry.id}>
+                <TabPane tabId={tabNo} className={{"d-none": activeTab!==tabNo, active: activeTab===tabNo }}>  
+                    <Card className={{"bg-danger text-white":entry.emergencyVet}}>
+                        <CardBody>
+                            <CardTitle>
+                                <h3>{entry.tabName}</h3>
+                            </CardTitle>
+                            <CardText>
+                                {entry.tabContent}
+                            </CardText>
+                        </CardBody>
+                    </Card>
+                </TabPane>
+            </div>
+        )
+    })
+
     return (
         <>
-            <h3 class="text-center">Journal</h3>
-            <textarea class="w-100 h-100"></textarea>
+            <Nav tabs>
+                <>
+                    {mapTabs}
+                </>
+            </Nav>
+
+            <TabContent activeTab={activeTab}>
+                <>
+                    {mapTabPanes}
+                </>
+            </TabContent>
         </>
     )
 }
 
-function EmergencyContact() {
+function Care (props) {
+
+    const chosenDog=props.chosenDog;
+
     return (
         <>
-            <h3 class="text-center">Emergency Info</h3>
-            <div id="accordion">
-                <div class="card m-0">
-                    <div class="card-header p-1" id="headingOne">
-                        <h5>
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
-                                aria-expanded="true" aria-controls="collapseOne">
-                                <p class="m-0">Owner</p>
-                            </button>
-                        </h5>
+            <Header pageName="Take Care of" dogName={chosenDog.name} />
+            <div className="container">
+                <div className="row h75vh overflow-auto">
+                    <div className="col-12 col-md-6 m-auto">
+                        <DailyCare chosenDog={chosenDog} />
                     </div>
-                    <div class="collapse show" id="collapseOne" aria-labelledby="headingOne"
-                        data-parent="#accordion">
-                        <div class="card-body p-1">
-                            <p class="m-0">Dan Haas<br />410-937-2073</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card m-0">
-                    <div class="card-header p-1" id="headingOne">
-                        <h5>
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo"
-                                aria-expanded="false" aria-controls="collapseTwo">
-                                <p class="m-0">Vet</p>
-                            </button>
-                        </h5>
-                    </div>
-                    <div class="collapse" id="collapseTwo" aria-labelledby="headingOne"
-                        data-parent="#accordion">
-                        <div class="card-body p-1">
-                            <p class="m-0">Claws n Paws Animal Hospital<br />410-579-2918<br />6500 Washington
-                                Blvd #101<br />Elkridge MD 21075</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card m-0">
-                    <div class="card-header p-1" id="headingOne">
-                        <h5>
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree"
-                                aria-expanded="false" aria-controls="collapseThree">
-                                <p class="m-0">Emergency Vet</p>
-                            </button>
-                        </h5>
-                    </div>
-                    <div class="collapse" id="collapseThree" aria-labelledby="headingOne"
-                        data-parent="#accordion">
-                        <div class="card-body p-1">
-                            <p class="m-0">410-788-7040<br />32 Mellor Ave #C<br />Catonsville MD 21228</p>
-                        </div>
+                    <div className="col-12 col-md-6 m-auto">
+                        <Journal chosenDog={chosenDog} />
+                        <br />
+                        <EmergencyContact chosenDog={chosenDog} />             
                     </div>
                 </div>
             </div>
@@ -69,41 +160,16 @@ function EmergencyContact() {
     )
 }
 
-class Care extends Component {
-
-    render() {
-
-        return (
-            <>
-                <Header pageName="Take Care of" dogName="Suede" />
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12 col-md-6">
-                            <h2>Daily Routine</h2>
-                            <ul>
-                                <li class="list-group-item">8:00 AM Quick Walk</li>
-                                <li class="list-group-item">8:15 AM Breakfast: 2 scoops kibble + fiber</li>
-                                <li class="list-group-item">5:00 PM Long Walk</li>
-                                <li class="list-group-item">6:00 PM Dinner: 1 scoop kibble + Fiber</li>
-                                <li class="list-group-item">8:00 PM Quick Walk</li>
-                                <li class="list-group-item">8:15 PM Play Time</li>
-                                <li class="list-group-item">8:45 PM Training</li>
-                                <li class="list-group-item">9:00 PM Bedtime</li>
-                            </ul>
-                        </div>
-                        <div className="col-12 col-md-6">
-                            <div className="row">
-                                <Journal />
-                            </div>
-                            <div className="row">
-                                <EmergencyContact />
-                            </div>                    
-                        </div>
-                    </div>
-                </div>
-            </>
-        )
-    }
-}
-
 export default Care;
+
+/*
+<NavItem>
+    <NavLink
+    id="barkr-tab"
+    className={{ active: activeTab === '1' }}
+    onClick={() => { toggle('1'); }}
+    >
+    Owner
+    </NavLink>
+</NavItem>
+*/
