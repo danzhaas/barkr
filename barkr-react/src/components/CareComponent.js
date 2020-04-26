@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Card, CardText, CardBody, CardTitle, CardSubtitle, ListGroup, ListGroupItem, Form, FormGroup, Label, Input, Button, TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap'
 import Header from './HeaderComponent';
+import Consumer from "./configContext";
 
 function DailyCare(props) {
 
@@ -142,34 +143,28 @@ function Care (props) {
     const chosenDog=props.chosenDog;
 
     return (
-        <>
-            <Header pageName="Take Care of" dogName={chosenDog.name} />
-            <div className="container">
-                <div className="row h75vh overflow-auto">
-                    <div className="col-12 col-md-6 m-auto">
-                        <DailyCare chosenDog={chosenDog} />
-                    </div>
-                    <div className="col-12 col-md-6 m-auto">
-                        <Journal chosenDog={chosenDog} />
-                        <br />
-                        <EmergencyContact chosenDog={chosenDog} />             
-                    </div>
-                </div>
-            </div>
-        </>
+        <Consumer>
+            {context => {
+                return(
+                    <>
+                        <Header pageName="Take Care of" dogName={context.chosenDog.name} />
+                        <div className="container">
+                            <div className="row h75vh overflow-auto">
+                                <div className="col-12 col-md-6 m-auto">
+                                    <DailyCare chosenDog={context.chosenDog} />
+                                </div>
+                                <div className="col-12 col-md-6 m-auto">
+                                    <Journal chosenDog={context.chosenDog} />
+                                    <br />
+                                    <EmergencyContact chosenDog={context.chosenDog} />             
+                                </div>
+                            </div>
+                        </div>
+                    </>
+                )
+            }}
+        </Consumer>
     )
 }
 
 export default Care;
-
-/*
-<NavItem>
-    <NavLink
-    id="barkr-tab"
-    className={{ active: activeTab === '1' }}
-    onClick={() => { toggle('1'); }}
-    >
-    Owner
-    </NavLink>
-</NavItem>
-*/

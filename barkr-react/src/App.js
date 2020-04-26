@@ -6,9 +6,7 @@ import Main from './components/MainComponent';
 function App() {
   return (
     <BrowserRouter>
-      <div className="App overflow-scroll">
-        <Main />
-      </div>
+      <Main />
     </BrowserRouter>
   );
 }

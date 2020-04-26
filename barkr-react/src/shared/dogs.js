@@ -5,10 +5,12 @@ export const DOGS = [
         "bio":"Hi there! I am a 4 1/2 year old female Treeing Walker Coonhound.  I love meeting people, eating treats, and going to the dog park.  Outside the park I need space from other dogs.  I know a lot of tricks, so go to the Talk to Me page to see all the commands I know. Then let's talk!",
         "pictures": [
             {
-                "id":0,
-                "imageSm": "assets/img/suede-on-bed-800x640.jpg",
-                "imageMd": "assets/img/suede-on-bed-800x800.jpg",
-                "imageLg": "assets/img/suede-on-bed-1000x800.jpg"
+                "id":"thumbnail",
+                "image": ""
+            },
+            {
+                "id":"profilePic",
+                "image": "assets/img/suede-on-bed-1000x800.jpg"
             }
         ],
         "commands": [
@@ -134,7 +136,7 @@ export const DOGS = [
             {
                 "id":0,
                 "tabName":"Owner",
-                "tabContent":"Dan Haas\n410-937-2073",
+                "tabContent":"Dan Haas\n555-555-5555",
                 "emergencyVet": false
             },
             {
@@ -150,5 +152,242 @@ export const DOGS = [
                 "emergencyVet": true
             }
         ]
+    },
+    {
+        "id":1,
+        "name":"Boh",
+        "bio":"AKA Bohseph 'Boh' Boseidon Dudley.  4 year old black lab.  Enjoys butt scratches, carrying toys but not playing with them, and aggressively kissing people.  Entirely food motivated.",
+        "pictures": [
+            {
+                "id":"thumbnail",
+                "image": ""
+            },
+            {
+                "id":"profilePic",
+                "image":"boh.jpeg"
+            }
+        ],
+        "commands": [
+            {
+                "id":0,
+                "name":"Sit",
+                "image":"",
+                "description":""
+            },
+            {
+                "id":1,
+                "name":"Stay",
+                "image":"",
+                "description":""
+            },
+            {
+                "id":2,
+                "name":"Lie Down",
+                "image":"",
+                "description":""
+            },
+            {
+                "id":3,
+                "name":"Leave It",
+                "image":"",
+                "description":""
+            },
+        ],    
+        "ZIP":"21117",
+        "routine": [
+            {
+                "id":0,
+                "detail": "7:30 AM: Eat"
+            },
+            {
+                "id":1,
+                "detail": "Unscripted sleep and being outside"
+            },
+            {
+                "id":2,
+                "detail": "5:00 PM: Eat"
+            },
+        ],
+        "supplies": [
+            {
+                "id":0,
+                "detail": ""
+            },
+        ],
+        "notes": [
+            {
+                "id":0,
+                "content":""
+            }
+        ],    
+        "contacts": [
+            {
+                "id":0,
+                "tabName":"Owner",
+                "tabContent":"Brian Dudley",
+                "emergencyVet": false
+            },
+            {
+                "id":1,
+                "tabName":"Primary Vet",
+                "tabContent":"North West Animal Hospital",
+                "emergencyVet": false
+            },
+            {
+                "id":2,
+                "tabName":"Emergency Vet",
+                "tabContent":"Pet ER",
+                "emergencyVet": true
+            }
+        ]
+    },
+    {
+        "id":2,
+        "name":"Cato",
+        "bio":"AKA Cato 'Let me inside, now outside' Dudley.  3 year old German Sheppard.  Lovable jerk, must be center of attention, has a lot to say.  Wants to be a good boy, sometimes succeeds.  Not as easily bribed as his brother.",
+        "pictures": [
+            {
+                "id":"thumbnail",
+                "image": ""
+            },
+            {
+                "id":"profilePic",
+                "image":"cato.jpeg"
+            }
+        ],
+        "commands": [
+            {
+                "id":0,
+                "name":"Sit",
+                "image":"",
+                "description":""
+            },
+            {
+                "id":1,
+                "name":"Stay",
+                "image":"",
+                "description":""
+            },
+            {
+                "id":2,
+                "name":"Lie Down",
+                "image":"",
+                "description":""
+            },
+        ],    
+        "ZIP":"21117",
+        "routine": [
+            {
+                "id":0,
+                "detail": "7:30 AM: Eat"
+            },
+            {
+                "id":1,
+                "detail": "Unscripted sleep and being outside"
+            },
+            {
+                "id":2,
+                "detail": "5:00 PM: Eat"
+            },
+        ],
+        "supplies": [
+            {
+                "id":0,
+                "detail": ""
+            },
+        ],
+        "notes": [
+            {
+                "id":0,
+                "content":""
+            }
+        ],    
+        "contacts": [
+            {
+                "id":0,
+                "tabName":"Owner",
+                "tabContent":"Brian Dudley",
+                "emergencyVet": false
+            },
+            {
+                "id":1,
+                "tabName":"Primary Vet",
+                "tabContent":"North West Animal Hospital",
+                "emergencyVet": false
+            },
+            {
+                "id":2,
+                "tabName":"Emergency Vet",
+                "tabContent":"Pet ER",
+                "emergencyVet": true
+            }
+        ]
+    },
+]
+    
+    /*
+    BLANK TEMPLATE - COPY AND PASTE TO ADD NEW PET
+    {
+        "id":1,
+        "name":""
+        "bio":"",
+        "pictures": [
+            {
+                "id":"thumbnail",
+                "image": ""
+            },
+            {
+                "id":"profilePic",
+                "image":""
+            }
+        ],
+        "commands": [
+            {
+                "id":0,
+                "name":"",
+                "image":"",
+                "description":""
+            },
+        ],    
+        "ZIP":"21202",
+        "routine": [
+            {
+                "id":0,
+                "detail": ""
+            },
+        ],
+        "supplies": [
+            {
+                "id":0,
+                "detail": ""
+            },
+        ],
+        "notes": [
+            {
+                "id":0,
+                "content":""
+            }
+        ],    
+        "contacts": [
+            {
+                "id":0,
+                "tabName":"Owner",
+                "tabContent":"",
+                "emergencyVet": false
+            },
+            {
+                "id":1,
+                "tabName":"Primary Vet",
+                "tabContent":"",
+                "emergencyVet": false
+            },
+            {
+                "id":2,
+                "tabName":"Emergency Vet",
+                "tabContent":"",
+                "emergencyVet": true
+            }
+        ]
     }
 ]
+*/

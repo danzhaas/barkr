@@ -1,27 +1,31 @@
-import React from 'react';
-import { Button } from 'reactstrap';
+import React, { Component } from 'react';
+import { Button, Modal, ModalHeader, ModalBody, Card, CardText, CardBody, CardHeader, CardImg } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import Header from './HeaderComponent';
+import Consumer from "./configContext";
 
-function DogId(props) {
+
+function DogId (props) {
     const chosenDog=props.chosenDog;
 
     return(
-        <>
-            <div className="h-75" id="dog-card">
-                <img id="dog-home-img" className="img-fluid d-sm-none" src={chosenDog.pictures[0].imageSm}></img>
-                <img id="dog-home-img" className="img-fluid d-none d-sm-block d-md-none" src={chosenDog.pictures[0].imageMd}></img>
-                <img id="dog-home-img" className="img-fluid d-none d-md-block" src={chosenDog.pictures[0].imageLg}></img>
-            </div>
-            <div className="bg-white h-25 text-left p-2">
-                <p>{chosenDog.bio}</p>
-            </div>
-        </>
+        <Card id="dog-card" >
+            <CardImg id="dog-home-img" src={() => chosenDog.pictures.filter(pic => pic.id==="profilePic")[0].image} />
+            <CardBody>
+                <CardText>
+                    {chosenDog.bio}
+                </CardText>
+            </CardBody>
+        </Card>
     )
 } 
 
+
 function HomeNavCol(props) {
+    
     const chosenDog=props.chosenDog;
+    const toggle = props.toggle;
+
     return(
         <div id="home-nav-col" className="d-flex flex-column h-100 p-1" >
             <Link to="/talk">
@@ -42,13 +46,8 @@ function HomeNavCol(props) {
                     <h2>&nbsp;Care for {chosenDog.name}</h2>
                 </Button>
             </Link>
-            <Link to="/care">
-                <Button className="bg-danger home-nav-button">
-                    <h2>Emergency Contacts</h2>
-                </Button>
-            </Link>
             <div className="py-3 home-nav-button">
-                <h3 className="text-white">Share {chosenDog.name}</h3>
+                <h3 className="text-danger">Share {chosenDog.name}</h3>
                 <div id="social-media" className="d-flex flex-row justify-content-around align-items-center">
                     <Link to="instagram.com">
                         <i className="fa fa-instagram fa-3x"></i>
@@ -64,30 +63,86 @@ function HomeNavCol(props) {
                     </Link>
                 </div>
             </div>
+            <Button className="bg-danger home-nav-button" onClick={toggle}>
+                <h2>Emergency Contacts</h2>
+            </Button>
         </div>
     )
 }
 
 
-function DogHome (props) {
-
+function EmergencyContactsModal (props) {
     const chosenDog=props.chosenDog;
+    const modal=props.modal;
+    const toggle = props.toggle;
+
+    const renderContacts=chosenDog.contacts.map(entry => {
+        return(
+            <div key={entry.id}>
+                <Card >
+                    <CardHeader>{entry.tabName}</CardHeader>
+                    <CardBody>
+                        <CardText>
+                            {entry.tabContent}
+                        </CardText>
+                    </CardBody>
+                </Card>
+            </div>
+        )
+    })
 
     return(
-        <>
-            <Header pageName="Meet" dogName={chosenDog.name}/>                
-            <div className="container h75vh">                    
-                <div className="row h-100 overflow-auto">                        
-                    <div className="col-12 col-md-8 mh-100 p-1">
-                        <DogId chosenDog={chosenDog} />
-                    </div>
-                    <div className="d-none d-md-block col-md-4 p-0">
-                        <HomeNavCol chosenDog={chosenDog} />
-                    </div>
-                </div>
-            </div>
-        </>
+        <Modal isOpen={modal} toggle={toggle} >
+            <ModalHeader toggle={toggle} className="bg-danger">Emergency Contacts</ModalHeader>
+            <ModalBody >
+                {renderContacts}
+            </ModalBody>
+        </Modal>
     )
+}
+
+
+class DogHome extends Component {
+    constructor(props) {
+        super(props);
+        this.state= {
+            modal: false
+        };
+        this.toggle = this.toggle.bind(this);
+    }
+
+    toggle() { 
+        this.setState({modal: !this.state.modal}) 
+    };
+
+    render() {
+        
+        const chosenDog=this.props.chosenDog;
+        const modal=this.state.modal;
+    
+        return(            
+            <Consumer>
+                {context => {
+                    return(
+                        <>
+                            <Header pageName="Meet" dogName={context.chosenDog.name} chooseDog={context.chooseDog} />         
+                            <div className="container h75vh">                    
+                                <div className="row h-100 overflow-auto">                        
+                                    <div className="col-12 col-md-8 mh-100 p-1">
+                                        <DogId chosenDog={context.chosenDog} />
+                                    </div>
+                                    <div className="d-none d-md-block col-md-4 p-0">
+                                        <HomeNavCol chosenDog={context.chosenDog} toggle={this.toggle} />
+                                        <EmergencyContactsModal chosenDog={context.chosenDog} modal={modal} toggle={this.toggle} />
+                                    </div>
+                                </div>
+                            </div>   
+                        </>
+                    )
+                }}
+            </Consumer>
+        )
+    }
 }
 
 export default DogHome;
