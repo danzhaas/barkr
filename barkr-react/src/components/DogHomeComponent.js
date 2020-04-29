@@ -7,19 +7,17 @@ import Consumer from "./configContext";
 
 function DogId (props) {
     const chosenDog=props.chosenDog;
-
     return(
-        <Card id="dog-card" >
-            <CardImg id="dog-home-img" src={() => chosenDog.pictures.filter(pic => pic.id==="profilePic")[0].image} />
-            <CardBody>
-                <CardText>
+        <Card id="dog-card" className="h-100" >
+            <CardImg id="dog-home-img" className="h80" src={chosenDog.pic.filter(pic => pic.type==="profilePic")[0].img}  />
+            <CardBody >
+                <CardText className="text-left">
                     {chosenDog.bio}
                 </CardText>
             </CardBody>
         </Card>
     )
 } 
-
 
 function HomeNavCol(props) {
     
@@ -127,9 +125,9 @@ class DogHome extends Component {
                         <>
                             <Header pageName="Meet" dogName={context.chosenDog.name} chooseDog={context.chooseDog} />         
                             <div className="container h75vh">                    
-                                <div className="row h-100 overflow-auto">                        
+                                <div className="row h-100">                        
                                     <div className="col-12 col-md-8 mh-100 p-1">
-                                        <DogId chosenDog={context.chosenDog} />
+                                        <DogId chosenDog={context.chosenDog} dogs={context.dogs} />
                                     </div>
                                     <div className="d-none d-md-block col-md-4 p-0">
                                         <HomeNavCol chosenDog={context.chosenDog} toggle={this.toggle} />

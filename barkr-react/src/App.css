@@ -33,10 +33,15 @@ h1 {
   margin:0;
 }
 
-#landing-backsplash, #dog-home-img {
+#landing-backsplash {
   object-fit:cover;
   background-origin: border-box;
   height:100%;
+}
+
+#dog-home-img {
+  object-fit:cover;
+  background-origin: border-box;
 }
 
 #landing-logo {
@@ -140,4 +145,12 @@ i {
   border:0;
   height:70vh;
   overflow:scroll;
+}
+
+.h80 {
+  height:80%;
+}
+
+.h20 {
+  height:20%;
 }

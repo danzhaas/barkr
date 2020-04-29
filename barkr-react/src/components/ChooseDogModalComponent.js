@@ -13,8 +13,8 @@ export function DogChooserModal(props) {
     const dogList=dogs.map(dog => {
         return(
             <div key={dog.id}>
-                <Link className="d-flex flex-row" onClick={() => chooseDog(dog.id)} to="/dog-home">
-                    <img src={dog.pictures.filter(pic => pic.id="thumbnail")[0].image} />
+                <Link className="d-flex flex-row" onClick={() => {chooseDog(dog.id); toggleModal()}} to="/dog-home">
+                    <img src={dog.pic.filter(pic => pic.id="thumbnail")[0].image} />
                     <h1>{dog.name}</h1>
                 </Link>
             </div>

@@ -2,15 +2,15 @@ export const DOGS = [
     {
         "id":0,
         "name":"Suede",
-        "bio":"Hi there! I am a 4 1/2 year old female Treeing Walker Coonhound.  I love meeting people, eating treats, and going to the dog park.  Outside the park I need space from other dogs.  I know a lot of tricks, so go to the Talk to Me page to see all the commands I know. Then let's talk!",
-        "pictures": [
+        "bio":" Hi, I'm a 4 1/2 year old female Treeing Walker Coonhound.  I love meeting people, eating treats, and going to the dog park.  Outside the park I need space from other dogs.  I know a lot of tricks, so go to the Talk to Me page to see all the commands I know.",
+        "pic": [
             {
-                "id":"thumbnail",
-                "image": ""
+                "type":"thumbnail",
+                "img": ""
             },
             {
-                "id":"profilePic",
-                "image": "assets/img/suede-on-bed-1000x800.jpg"
+                "type":"profilePic",
+                "img": "assets/img/suede-on-bed-1000x800.jpg"
             }
         ],
         "commands": [
@@ -157,14 +157,14 @@ export const DOGS = [
         "id":1,
         "name":"Boh",
         "bio":"AKA Bohseph 'Boh' Boseidon Dudley.  4 year old black lab.  Enjoys butt scratches, carrying toys but not playing with them, and aggressively kissing people.  Entirely food motivated.",
-        "pictures": [
+        "pic": [
             {
-                "id":"thumbnail",
-                "image": ""
+                "type":"thumbnail",
+                "img": ""
             },
             {
-                "id":"profilePic",
-                "image":"boh.jpeg"
+                "type":"profilePic",
+                "img":"assets/img/boh.jpeg"
             }
         ],
         "commands": [
@@ -245,14 +245,14 @@ export const DOGS = [
         "id":2,
         "name":"Cato",
         "bio":"AKA Cato 'Let me inside, now outside' Dudley.  3 year old German Sheppard.  Lovable jerk, must be center of attention, has a lot to say.  Wants to be a good boy, sometimes succeeds.  Not as easily bribed as his brother.",
-        "pictures": [
+        "pic": [
             {
-                "id":"thumbnail",
-                "image": ""
+                "type":"thumbnail",
+                "img": ""
             },
             {
-                "id":"profilePic",
-                "image":"cato.jpeg"
+                "type":"profilePic",
+                "img":"assets/img/cato.jpeg"
             }
         ],
         "commands": [
@@ -331,14 +331,14 @@ export const DOGS = [
         "id":1,
         "name":""
         "bio":"",
-        "pictures": [
+        "pic": [
             {
-                "id":"thumbnail",
-                "image": ""
+                "type":"thumbnail",
+                "img": ""
             },
             {
-                "id":"profilePic",
-                "image":""
+                "type":"profilePic",
+                "img":""
             }
         ],
         "commands": [
