@@ -26,7 +26,7 @@ class Landing extends Component {
         const modal=this.state.modal;
 
         return(
-            <div id="landing-container" className="container h100vh border-0">
+            <div className="container h100vh">
                 
                 <div className="row h12vh border-0">
                     <div className="col-12 d-flex flex-column justify-content-center">
