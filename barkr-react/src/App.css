@@ -69,10 +69,6 @@ h1 {
   height:auto;
 }
 
-#navbar-toggler {
-  width:100px;
-}
-
 #navbar {
   width:200px;
   top:112px;
@@ -95,8 +91,13 @@ i {
   font-family: "Josefin Sans", sans-serif;
 }
 
-.header-button {
+/* .header-button {
   border:2px solid #DC3545;
+} */
+
+.modal-dialog {
+  width:75%;
+  margin: auto;
 }
 
 #home-nav-col > a, #home-nav-col > div, #home-nav-col > button {
@@ -153,4 +154,20 @@ i {
 
 .h20 {
   height:20%;
+}
+
+//      MEDIA QUERIES
+
+//  XS and SM
+@media (max-width: 767px) {
+  #dog-home-img {
+    height: 50%;
+  }
+}
+
+//  MD - XL
+@media (min-width: 768px) {
+  #dog-home-img {
+    height: 80%;
+  }
 }
