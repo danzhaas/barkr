@@ -76,10 +76,10 @@ class Header extends Component {
                                 </NavItem>
                                 <DropdownItem divider className="d-block d-md-none" />
                                 <NavItem >
-                                    <div className="d-flex flex-row p-md-2" onClick={this.toggleModal} >
+                                    <a className="nav-link d-flex flex-row p-md-2" onClick={this.toggleModal} >
                                         <i className="fa fa-dog fa-2x text-danger "></i>
-                                        <h5 className="text-danger">Choose a Dog</h5>
-                                    </div>
+                                        <h5 className="text-danger">Choose Another Dog</h5>
+                                    </a>
                                 </NavItem>
                             </Nav>
                         </Collapse>

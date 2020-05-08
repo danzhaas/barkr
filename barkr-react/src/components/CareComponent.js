@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardText, CardBody, CardTitle, CardSubtitle, ListGroup, ListGroupItem, Form, FormGroup, Label, Input, Button, TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap'
 import Header from './HeaderComponent';
 import Consumer from "./configContext";
+import Footer from './FooterComponent';
 
 function DailyCare(props) {
 
@@ -152,14 +153,16 @@ function Care (props) {
                             <div className="row h75vh overflow-auto">
                                 <div className="col-12 col-md-6 m-auto">
                                     <DailyCare chosenDog={context.chosenDog} />
-                                </div>
-                                <div className="col-12 col-md-6 m-auto">
+                                </div>                                
+                                <div className="col-12 col-md-6">
+                                    <br />
                                     <Journal chosenDog={context.chosenDog} />
                                     <br />
                                     <EmergencyContact chosenDog={context.chosenDog} />             
                                 </div>
                             </div>
                         </div>
+                        <Footer />
                     </>
                 )
             }}

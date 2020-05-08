@@ -2,6 +2,7 @@ import React, { useState, Component } from 'react';
 import Header from './HeaderComponent';
 import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap'
 import Consumer from "./configContext";
+import Footer from './FooterComponent';
 
 class AdventureSearch extends Component {
     constructor(props) {
@@ -10,10 +11,10 @@ class AdventureSearch extends Component {
 
     ZIP=this.props.ZIP;
 
-    /*componentDidMount(ZIP) {
-        document.getElementById("gsc-i-id1").value=("dog events "+ZIP);
-        document.querySelector(".gsc-search-button-v2").click();
-    };*/
+    // componentDidMount(ZIP) {
+    //     document.getElementById("gsc-i-id1").value=("dog events "+ZIP);
+    //     document.querySelector(".gsc-search-button-v2").click();
+    // };
 
     render() {
 
@@ -81,6 +82,7 @@ function Adventure() {
                                 </div>
                             </div>
                         </div>
+                        <Footer />
                     </>
                 )
             }}

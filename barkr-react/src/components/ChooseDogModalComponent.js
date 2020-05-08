@@ -14,8 +14,8 @@ export function DogChooserModal(props) {
         return(
             <div key={dog.id}>
                 <Link className="d-flex flex-row" onClick={() => {chooseDog(dog.id); toggleModal()}} to="/dog-home">
-                    <img src={dog.pic.filter(pic => pic.id="thumbnail")[0].image} />
-                    <h1>{dog.name}</h1>
+                    <img className="border-1 border-primary rounded-circle" src={dog.pic.filter(pic => pic.type==="thumbnail")[0].img} />
+                    <h1 className="my-auto ml-2">{dog.name}</h1>
                 </Link>
             </div>
         )

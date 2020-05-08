@@ -3,10 +3,16 @@ export const DOGS = [
         "id":0,
         "name":"Suede",
         "bio":" Hi, I'm a 4 1/2 year old female Treeing Walker Coonhound.  I love meeting people, eating treats, and going to the dog park.  Outside the park I need space from other dogs.  I know a lot of tricks, so go to the Talk to Me page to see all the commands I know.",
+        "sex": "Female",
+        "breed": "Treeing Walker Coonhound",
+        "age": "5",
+        "from": "Harford County Humane Society, Fallston, MD",
+        "siblings": "n/a",
+        "owner": "Dan Haas",
         "pic": [
             {
                 "type":"thumbnail",
-                "img": ""
+                "img": "assets/img/suede-thumbnail.jpg"
             },
             {
                 "type":"profilePic",
@@ -153,14 +159,30 @@ export const DOGS = [
             }
         ]
     },
+
+
     {
         "id":1,
         "name":"Boh",
         "bio":"AKA Bohseph 'Boh' Boseidon Dudley.  4 year old black lab.  Enjoys butt scratches, carrying toys but not playing with them, and aggressively kissing people.  Entirely food motivated.",
+        "sex": "Male",
+        "breed": "Black Lab",
+        "age": "4",
+        "from": "-",
+        "siblings": [
+            {
+                "name":"Cato",
+                "id":2
+            },
+            {
+                "name":"Gaia"
+            }
+        ],
+        "owner": "Brian Dudley",
         "pic": [
             {
                 "type":"thumbnail",
-                "img": ""
+                "img": "assets/img/boh-thumbnail.jpg"
             },
             {
                 "type":"profilePic",
@@ -241,14 +263,30 @@ export const DOGS = [
             }
         ]
     },
+
+
     {
         "id":2,
         "name":"Cato",
-        "bio":"AKA Cato 'Let me inside, now outside' Dudley.  3 year old German Sheppard.  Lovable jerk, must be center of attention, has a lot to say.  Wants to be a good boy, sometimes succeeds.  Not as easily bribed as his brother.",
+        "bio":"AKA Cato 'Let me inside, now outside' Dudley.  3 year old German Shepherd.  Lovable jerk, must be center of attention, has a lot to say.  Wants to be a good boy, sometimes succeeds.  Not as easily bribed as his brother.",
+        "sex": "Male",
+        "breed": "German Shepherd",
+        "age": "3",
+        "from": "-",
+        "siblings": [
+            {
+                "name":"Boh",
+                "id":1
+            },
+            {
+                "name":"Gaia"
+            }
+        ],
+        "owner": "Brian Dudley",
         "pic": [
             {
                 "type":"thumbnail",
-                "img": ""
+                "img": "assets/img/cato-thumbnail.jpg"
             },
             {
                 "type":"profilePic",
@@ -331,6 +369,17 @@ export const DOGS = [
         "id":1,
         "name":""
         "bio":"",
+        "sex": "",
+        "breed": "",
+        "age": "",
+        "from": "",
+        "siblings": [
+            {
+                "name":"",
+                "id":""
+            }
+        ],
+        "owner": "",
         "pic": [
             {
                 "type":"thumbnail",
