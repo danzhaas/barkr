@@ -5,7 +5,7 @@ export const DOGS = [
         "bio":" Hi, I'm a 4 1/2 year old female Treeing Walker Coonhound.  I love meeting people, eating treats, and going to the dog park.  Outside the park I need space from other dogs.  I know a lot of tricks, so go to the Talk to Me page to see all the commands I know.",
         "sex": "Female",
         "breed": "Treeing Walker Coonhound",
-        "age": "5",
+        "yearBorn": "2015",
         "from": "Harford County Humane Society, Fallston, MD",
         "siblings": "n/a",
         "owner": "Dan Haas",
@@ -142,19 +142,22 @@ export const DOGS = [
             {
                 "id":0,
                 "tabName":"Owner",
-                "tabContent":"Dan Haas\n555-555-5555",
+                "tabContent":"Dan Haas",
+                "tabPhone":"555-555-5555",
                 "emergencyVet": false
             },
             {
                 "id":1,
                 "tabName":"Primary Vet",
-                "tabContent":"Claws n Paws Animal Hospital\n410-579-2918\n6500 Washington Blvd #101\nElkridge MD 21075",
+                "tabContent":"Claws n Paws Animal Hospital\n6500 Washington Blvd #101\nElkridge MD 21075",
+                "tabPhone":"410-579-2918",
                 "emergencyVet": false
             },
             {
                 "id":2,
                 "tabName":"Emergency Vet",
-                "tabContent":"Baltimore Emergency Vet \n410-788-7040\n32 Mellor Ave #C\nCatonsville MD 21228",
+                "tabContent":"Baltimore Emergency Vet\n32 Mellor Ave #C\nCatonsville MD 21228",
+                "tabPhone":"410-788-7040",
                 "emergencyVet": true
             }
         ]
@@ -167,7 +170,7 @@ export const DOGS = [
         "bio":"AKA Bohseph 'Boh' Boseidon Dudley.  4 year old black lab.  Enjoys butt scratches, carrying toys but not playing with them, and aggressively kissing people.  Entirely food motivated.",
         "sex": "Male",
         "breed": "Black Lab",
-        "age": "4",
+        "yearBorn": "2016",
         "from": "-",
         "siblings": [
             {
@@ -193,25 +196,25 @@ export const DOGS = [
             {
                 "id":0,
                 "name":"Sit",
-                "image":"",
+                "image":"assets/img/stock-sit.jpg",
                 "description":""
             },
             {
                 "id":1,
                 "name":"Stay",
-                "image":"",
+                "image":"assets/img/stock-stay.jpg",
                 "description":""
             },
             {
                 "id":2,
                 "name":"Lie Down",
-                "image":"",
+                "image":"assets/img/stock-down.jpg",
                 "description":""
             },
             {
                 "id":3,
                 "name":"Leave It",
-                "image":"",
+                "image":"assets/img/stock-leave-it.jpg",
                 "description":""
             },
         ],    
@@ -223,7 +226,7 @@ export const DOGS = [
             },
             {
                 "id":1,
-                "detail": "Unscripted sleep and being outside"
+                "detail": "7:30 AM - 5:00 PM: Unscripted sleep and being outside"
             },
             {
                 "id":2,
@@ -247,18 +250,21 @@ export const DOGS = [
                 "id":0,
                 "tabName":"Owner",
                 "tabContent":"Brian Dudley",
+                "tabPhone":"555-555-5556",
                 "emergencyVet": false
             },
             {
                 "id":1,
                 "tabName":"Primary Vet",
                 "tabContent":"North West Animal Hospital",
+                "tabPhone":"410-363-0535",
                 "emergencyVet": false
             },
             {
                 "id":2,
                 "tabName":"Emergency Vet",
                 "tabContent":"Pet ER",
+                "tabPhone":"410-252-8387",
                 "emergencyVet": true
             }
         ]
@@ -271,7 +277,7 @@ export const DOGS = [
         "bio":"AKA Cato 'Let me inside, now outside' Dudley.  3 year old German Shepherd.  Lovable jerk, must be center of attention, has a lot to say.  Wants to be a good boy, sometimes succeeds.  Not as easily bribed as his brother.",
         "sex": "Male",
         "breed": "German Shepherd",
-        "age": "3",
+        "yearBorn": "2017",
         "from": "-",
         "siblings": [
             {
@@ -297,19 +303,19 @@ export const DOGS = [
             {
                 "id":0,
                 "name":"Sit",
-                "image":"",
+                "image":"assets/img/stock-sit.jpg",
                 "description":""
             },
             {
                 "id":1,
                 "name":"Stay",
-                "image":"",
+                "image":"assets/img/stock-stay.jpg",
                 "description":""
             },
             {
                 "id":2,
                 "name":"Lie Down",
-                "image":"",
+                "image":"assets/img/stock-down.jpg",
                 "description":""
             },
         ],    
@@ -321,7 +327,7 @@ export const DOGS = [
             },
             {
                 "id":1,
-                "detail": "Unscripted sleep and being outside"
+                "detail": "7:30 AM - 5:00 PM: Unscripted sleep and being outside"
             },
             {
                 "id":2,
@@ -345,18 +351,21 @@ export const DOGS = [
                 "id":0,
                 "tabName":"Owner",
                 "tabContent":"Brian Dudley",
+                "tabPhone":"555-555-5556",
                 "emergencyVet": false
             },
             {
                 "id":1,
                 "tabName":"Primary Vet",
                 "tabContent":"North West Animal Hospital",
+                "tabPhone":"410-363-0535",
                 "emergencyVet": false
             },
             {
                 "id":2,
                 "tabName":"Emergency Vet",
                 "tabContent":"Pet ER",
+                "tabPhone":"410-252-8387",
                 "emergencyVet": true
             }
         ]
@@ -371,7 +380,7 @@ export const DOGS = [
         "bio":"",
         "sex": "",
         "breed": "",
-        "age": "",
+        "yearBorn": "",
         "from": "",
         "siblings": [
             {
@@ -422,18 +431,21 @@ export const DOGS = [
                 "id":0,
                 "tabName":"Owner",
                 "tabContent":"",
+                "tabPhone":"",
                 "emergencyVet": false
             },
             {
                 "id":1,
                 "tabName":"Primary Vet",
                 "tabContent":"",
+                "tabPhone":"",
                 "emergencyVet": false
             },
             {
                 "id":2,
                 "tabName":"Emergency Vet",
                 "tabContent":"",
+                "tabPhone":"",
                 "emergencyVet": true
             }
         ]

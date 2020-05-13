@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color:#FFC107;
+  background-color:#33273a;
   font-family: "Josefin Sans", sans-serif;
   text-align: center;
 }
@@ -19,13 +19,12 @@ h1 {
   padding:0;
 }
 
-.row, .column {
+/* .row, .column {
  height:100%;
-}
+} */
 
 .row {
-  border: 5px solid #343840;
-  background-color:#343840;
+  background-color:#927737;
 }
 
 .jumbotron {
@@ -37,11 +36,18 @@ h1 {
   object-fit:cover;
   background-origin: border-box;
   height:100%;
+  z-index: 0;
 }
 
 #dog-home-img {
   object-fit:cover;
   background-origin: border-box;
+}
+
+#landing-overlay {
+  position:absolute;
+  width:100%;
+  height:100%;
 }
 
 #landing-logo {
@@ -51,6 +57,7 @@ h1 {
 #landing-logo * {
   text-shadow: 5px 5px #343840;
   font-size: 10vh;
+  z-index:15;
 }
 
 #dog-name {
@@ -152,18 +159,84 @@ i {
   height:20%;
 }
 
-//      MEDIA QUERIES
+.footer {
+  background-color: #FFC107;
+  margin:0;
+}
 
-//  XS and SM
-@media (max-width: 767px) {
+
+      /* MEDIA QUERIES */
+
+  /* XS and SM */
+@media screen and (max-width: 767px) {
   #dog-home-img {
     height: 50%;
   }
+  #landing-backsplash {
+    position:absolute;
+    left:-100px;
+  }
+  #landing-center {
+    height:75%;
+    border-top: 0;
+    border-bottom: 0;
+  }
+  #landing-center * {
+    padding:0;
+  }
+  #landing-button {
+    height:12.5%;
+  }
+  #landing-button * {
+    height:100%;
+    padding:0;
+  }
+  .row {
+    border: 5px solid #927737;
+  }
 }
 
-//  MD - XL
-@media (min-width: 768px) {
+/*  MD - XL */
+/* @media screen and (min-width: 768px) { */
   #dog-home-img {
     height: 80%;
   }
-}
+  #landing-center {
+    height:100vh;
+    z-index:0;
+    position:relative;
+    margin:0;
+    z-index:1
+  }
+  .landing-button {
+    height:45%;
+    width:100%;
+    display:block;
+    z-index:2;
+    background-color: rgba(255, 193, 7, 0.3);
+    margin:0;
+    border:0;
+  }
+  .landing-button:hover {
+    background-color: rgba(255, 193, 7, 0.6);
+  }
+  .top {
+    top:0
+  }
+  .bottom {
+    bottom:0;
+  }
+  .landing-button div {
+    height:100%;
+    width:100%;
+    padding:0;
+    background-color: rgba(255, 255, 255, 0);
+  }
+  #landing-button div button {
+    height:100%;
+    width:100%;
+    background-color: rgba(255, 193, 7, 0.178);
+  }
+  .row {
+    border: 10px solid #927737;
+  }

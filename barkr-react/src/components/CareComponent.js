@@ -92,7 +92,7 @@ const EmergencyContact = (props) => {
                 <NavItem>
                     <NavLink
                     id="barkr-tab"
-                    className={{ active: activeTab === tabNo, "bg-danger text-white":entry.emergencyVet}}
+                    className={{ active: activeTab === tabNo, "bg-danger text-white":entry.emergencyVet, "px-2":true, "px-md-3": true}}
                     onClick={() => { toggle(tabNo) }} 
                     >
                     {entry.tabName}
@@ -103,6 +103,7 @@ const EmergencyContact = (props) => {
     })
 
     const mapTabPanes = chosenDog.contacts.map(entry => {
+        const formatPhoneDialer = (phone) => `tel:${phone}`;
         const tabNo=(entry.id+1).toString();
         return(
             <div key={entry.id}>
@@ -114,6 +115,11 @@ const EmergencyContact = (props) => {
                             </CardTitle>
                             <CardText>
                                 {entry.tabContent}
+                            </CardText>
+                            <CardText>
+                                <a href={formatPhoneDialer(entry.tabPhone)} >
+                                    {entry.tabPhone}
+                                </a>
                             </CardText>
                         </CardBody>
                     </Card>
@@ -140,8 +146,6 @@ const EmergencyContact = (props) => {
 }
 
 function Care (props) {
-
-    const chosenDog=props.chosenDog;
 
     return (
         <Consumer>

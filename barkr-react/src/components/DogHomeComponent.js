@@ -18,29 +18,34 @@ function DogId (props) {
         else return data.map((sibling) => {
             if (sibling.id) {
                 return <a className="text-primary" onClick={() => chooseDog(sibling.id)}>
-                    <p>{sibling.name}</p>
+                    <p>&nbsp;{sibling.name}</p>
                 </a>
             }
             else {
-                return <span>{sibling.name}</span>
+                return <span>&nbsp;{sibling.name}</span>
             }
         })  
     }
     
+    const getAge = (yearBorn) => {
+        const currentYear = (new Date()).getFullYear();
+        return currentYear - yearBorn
+    }
+
     return(
         <>
-            <Card id="dog-card" className="col-12 col-md-8 p-3" >
+            <Card id="dog-card" className="col-12 col-md-8 p-3 h-auto" >
                 <CardImg id="dog-home-img" src={chosenDog.pic.filter(pic => pic.type==="profilePic")[0].img} />
-                <CardBody className="p-2 p-md-3" >
+                <CardBody className="p-2 p-md-3 h-auto" >
                     <CardText className="text-left">
                         {chosenDog.bio}
                     </CardText>
                 </CardBody>
             </Card>
-            <div className="col-12 col-md-4 pr-0">
+            <div className="col-12 col-md-4 px-0 pl-md-3">
                 <ListGroup className="p-0 text-left">
                     <ListGroupItem>
-                        <h4>More about {chosenDog.name}:</h4>
+                        <h4 className="text-center">More About {chosenDog.name}</h4>
                     </ListGroupItem>
                     <ListGroupItem>
                         <span className="font-weight-bold">Sex:</span> {chosenDog.sex}
@@ -49,12 +54,12 @@ function DogId (props) {
                         <span className="font-weight-bold">Breed:</span> {chosenDog.breed}
                     </ListGroupItem>
                     <ListGroupItem>
-                        <span className="font-weight-bold">Age:</span> {chosenDog.age}
+                        <span className="font-weight-bold">Age:</span> {getAge(chosenDog.yearBorn)}
                     </ListGroupItem>
                     <ListGroupItem>
                         <span className="font-weight-bold">From:</span> {chosenDog.from}
                     </ListGroupItem>
-                    <ListGroupItem>
+                    <ListGroupItem className="d-flex flex-row">
                         <span className="font-weight-bold">Siblings:</span> {renderSiblings(chosenDog.siblings)}
                     </ListGroupItem>
                     <ListGroupItem>
@@ -188,8 +193,8 @@ class DogHome extends Component {
                         <div className="h-100">
                             <Header pageName="Meet" dogName={context.chosenDog.name} chooseDog={context.chooseDog} />         
                             <div className="container h-100">                    
-                                <div className="row h-100 overflow-auto">                      
-                                    <div className="col-12 mh-100 p-1 d-flex flex-row flex-wrap">
+                                <div className="row h-100">                      
+                                    <div className="col-12 mh-100 p-0 p-md-1 d-flex flex-row flex-wrap overflow-auto">
                                         <DogId chosenDog={context.chosenDog} dogs={context.dogs} chooseDog={context.chooseDog} />
                                     </div>
                                     {/* <div className="col-12 d-md-block col-md-4 p-0">

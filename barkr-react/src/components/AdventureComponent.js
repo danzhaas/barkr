@@ -11,10 +11,10 @@ class AdventureSearch extends Component {
 
     ZIP=this.props.ZIP;
 
-    // componentDidMount(ZIP) {
-    //     document.getElementById("gsc-i-id1").value=("dog events "+ZIP);
-    //     document.querySelector(".gsc-search-button-v2").click();
-    // };
+    googleCseSearch (ZIP) {
+        document.getElementById("gsc-i-id1").value=("dog events "+ZIP);
+        document.querySelector(".gsc-search-button-v2").click();
+    };
 
     render() {
 
@@ -91,12 +91,3 @@ function Adventure() {
 }
 
 export default Adventure;
-
-
-/*
-        function googleCseSearch (ZIP) {
-            document.getElementById("gsc-i-id1").value=("dog events "+ZIP);
-            document.querySelector(".gsc-search-button-v2").click();
-        };
-        googleCseSearch(ZIP)
-*/

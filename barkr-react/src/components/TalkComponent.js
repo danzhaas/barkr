@@ -31,8 +31,6 @@ function CommandCards(props) {
 
 const Talk = (props) => {
 
-    const chosenDog=props.chosenDog;
-
     return (
         <Consumer>
             {context => {
