@@ -164,6 +164,13 @@ i {
   margin:0;
 }
 
+#navbarBrand * {
+  color: #DC3545;
+}
+
+#navbarBrand:hover * {
+  color:#0056B3;
+}
 
       /* MEDIA QUERIES */
 

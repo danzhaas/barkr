@@ -1,5 +1,5 @@
-import React, { useState, Component } from 'react';
-import { Button, Nav, Navbar, Collapse, NavItem, NavbarToggler, NavbarBrand, DropdownItem } from 'reactstrap';
+import React, { Component } from 'react';
+import { Nav, Navbar, Collapse, NavItem, NavbarToggler, NavbarBrand, DropdownItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import { DogChooserModal } from './ChooseDogModalComponent';
 import Consumer from "./configContext";
@@ -26,6 +26,8 @@ class Header extends Component {
 
     render() {
 
+        const dogName=this.props.dogName;
+
         return (
             <Consumer>
                 {context => {
@@ -38,9 +40,9 @@ class Header extends Component {
                                         <i className="fa fa-dog fa-2x text-danger"></i>
                                     </Button> */}
                                     <DogChooserModal modal={this.state.modal} toggleModal={this.toggleModal} chooseDog={context.chooseDog} dogs={context.dogs} />
-                                    <NavbarBrand className="d-flex flex-row align-items-center" href="/landing">
-                                        <i id="paw" className="fa fa-paw fa-3x text-danger"></i>
-                                        <h1 className="display-4 text-danger">Barkr</h1>
+                                    <NavbarBrand id="navbarBrand" className="d-flex flex-row align-items-center" href="/landing">
+                                        <i id="paw" className="fa fa-paw fa-3x"></i>
+                                        <h1 className="display-4 ">Barkr</h1>
                                     </NavbarBrand>
                                     <NavbarToggler className="text-danger" onClick={this.toggleNavbar}>
                                         <i className="fa fa-bars fa-3x"></i>
@@ -50,33 +52,33 @@ class Header extends Component {
                                             <NavItem>
                                                 <NavLink className="nav-link d-flex flex-row" to="/dog-home">
                                                     <i className="nav-icon fa fa-home fa-2x"></i>
-                                                    <h5>This Dog's Page</h5>
+                                                    <h5>{dogName}'s Page</h5>
                                                 </NavLink>
                                             </NavItem>
                                             <NavItem>
                                                 <NavLink className="nav-link d-flex flex-row" to="/talk">
                                                     <i className="nav-icon fa fa-comment fa-2x"></i>
-                                                    <h5>Talk to Me</h5>
+                                                    <h5>Talk to {dogName}</h5>
                                                 </NavLink>
                                             </NavItem>
                                             <NavItem>
                                                 <NavLink className="nav-link d-flex flex-row" to="/adventure">
                                                     <i className="nav-icon fa fa-tree fa-2x align-self-center"></i>
-                                                    <h5>Adventure with Me</h5>
+                                                    <h5>Adventure with {dogName}</h5>
                                                 </NavLink>
                                             </NavItem>
                                             <NavItem>
                                                 <NavLink className="nav-link d-flex flex-row" to="/care">
                                                     <i className="nav-icon fa fa-heart fa-2x"></i>
-                                                    <h5>Care for Me</h5>
+                                                    <h5>Care for {dogName}</h5>
                                                 </NavLink>
                                             </NavItem>
                                             <DropdownItem divider className="d-block d-md-none" />
                                             <NavItem >
-                                                <a className="nav-link d-flex flex-row p-md-2" onClick={this.toggleModal} >
-                                                    <i className="fa fa-dog fa-2x text-danger "></i>
-                                                    <h5 className="text-danger">Choose Another Dog</h5>
-                                                </a>
+                                                <NavLink className="nav-link d-flex flex-row p-md-2" onClick={this.toggleModal} to="#">
+                                                    <i className="fa fa-dog fa-2x "></i>
+                                                    <h5 >Choose Another Dog</h5>
+                                                </NavLink>
                                             </NavItem>
                                         </Nav>
                                     </Collapse>

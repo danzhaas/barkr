@@ -9,18 +9,13 @@ class AdventureSearch extends Component {
         super(props);
     }
 
-    ZIP=this.props.ZIP;
-
-    googleCseSearch (ZIP) {
-        document.getElementById("gsc-i-id1").value=("dog events "+ZIP);
-        document.querySelector(".gsc-search-button-v2").click();
-    };
-
     render() {
 
         return (
             <div id="searchDiv" className="overflow-scroll mh-100">
-                <div class="gcse-search" ></div>
+                <div class="gcse-search" >
+                    <script async src="https://cse.google.com/cse.js?cx=011008517122385517076:oeslk2omfyr"></script>
+                </div>
             </div>
         )
     }
@@ -41,6 +36,13 @@ function Adventure() {
     const toggle = tab => {
         if(activeTab !== tab) setActiveTab(tab);
     }
+
+    const googleCseSearch = (ZIP) => {
+        if (document.getElementById("gsc-i-id1")) {
+            document.getElementById("gsc-i-id1").value=("dog events "+ ZIP);
+            document.querySelector(".gsc-search-button-v2").click();
+        }
+    };
 
     return (
         <Consumer>
@@ -65,7 +67,7 @@ function Adventure() {
                                             <NavLink
                                                 id="barkr-tab"
                                                 className={{ active: activeTab === '2', "p-1":true }}
-                                                onClick={() => { toggle('2') }}
+                                                onClick={() => { toggle('2'); googleCseSearch(context.chosenDog.ZIP) }}
                                             >
                                                 <h3>Nearby Events</h3>
                                             </NavLink>

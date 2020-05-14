@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardText, CardBody, CardTitle, CardSubtitle, ListGroup, ListGroupItem, Form, FormGroup, Label, Input, Button, TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap'
+import { Button, Card, CardText, CardBody, CardTitle, CardSubtitle, ListGroup, ListGroupItem, Form, FormGroup, Label, Input, TabContent, TabPane, Nav, NavItem, NavLink, Popover, PopoverHeader, PopoverBody } from 'reactstrap'
 import Header from './HeaderComponent';
 import Consumer from "./configContext";
 import Footer from './FooterComponent';
@@ -43,6 +43,10 @@ function DailyCare(props) {
 }
 
 function Journal(props) {
+
+    const [popoverOpen, setPopoverOpen] = useState(false);
+    const toggle = () => setPopoverOpen(!popoverOpen);
+
     const chosenDog=props.chosenDog;
 
     const journalNotes = chosenDog.notes.map(entry => {
@@ -50,8 +54,8 @@ function Journal(props) {
             <div key={entry.id}>
                 <ListGroupItem>{entry.content}</ListGroupItem>
             </div>
-            )
-        })
+        )
+    })
 
     return (
         <Card>
@@ -70,7 +74,11 @@ function Journal(props) {
                         <Label>Add Note</Label>
                         <Input type="textarea" name="notes" id="notes"></Input>
                     </FormGroup>
-                    <Button>Save Note</Button>
+                    <Button type="button" id="Popover">Save Note</Button>
+                    <Popover placement="top" isOpen={popoverOpen} target="Popover" toggle={toggle}>
+                        <PopoverHeader>Coming soon</PopoverHeader>
+                        <PopoverBody>In development - check back in July 2020</PopoverBody>
+                    </Popover>
                 </Form>
             </CardBody>
         </Card>
